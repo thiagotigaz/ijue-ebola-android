@@ -2,7 +2,7 @@
 <resources>
     <string-array name="drawer_tabs">
         <item>FAQ</item>
-        <item>Hits</item>
+        <item>Tips</item>
         <item>About</item>
     </string-array>
 </resources>

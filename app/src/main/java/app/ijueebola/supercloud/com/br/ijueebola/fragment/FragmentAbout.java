@@ -1,26 +1,28 @@
 package app.ijueebola.supercloud.com.br.ijueebola.fragment;
 
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebChromeClient;
+import android.webkit.WebView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import app.ijueebola.supercloud.com.br.ijueebola.R;
-import app.ijueebola.supercloud.com.br.ijueebola.logging.L;
-import app.ijueebola.supercloud.com.br.ijueebola.widget.JustifiedWebView;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
 
 /**
  * A simple {@link android.support.v4.app.Fragment} subclass.
- * Use the {@link FragmentFAQ#newInstance} factory method to
+ * Use the {@link FragmentAbout#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class FragmentFAQ extends Fragment{
+public class FragmentAbout extends Fragment{
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -29,12 +31,20 @@ public class FragmentFAQ extends Fragment{
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    @InjectView(R.id.faq_container)
-    LinearLayout containerLinearLayout;
-//    @InjectView(R.id.faqWebView)
-//    JustifiedWebView faqWebView;
+    private LinearLayout containerLinearLayout;
 
-    public FragmentFAQ() {
+//    @InjectView(R.id.aboutTextView)
+//    TextView aboutTextView;
+    @InjectView(R.id.textViewGithub)
+    TextView githubTextView;
+    @InjectView(R.id.textViewFacebook)
+    TextView facebookTextView;
+    @InjectView(R.id.textViewTwitter)
+    TextView twetterTextView;
+    @InjectView(R.id.aboutWebView)
+    WebView aboutWebView;
+
+    public FragmentAbout() {
         // Required empty public constructor
     }
 
@@ -47,8 +57,8 @@ public class FragmentFAQ extends Fragment{
      * @return A new instance of fragment FragmentSearch.
      */
     // TODO: Rename and change types and number of parameters
-    public static FragmentFAQ newInstance(String param1, String param2) {
-        FragmentFAQ fragment = new FragmentFAQ();
+    public static FragmentAbout newInstance(String param1, String param2) {
+        FragmentAbout fragment = new FragmentAbout();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -69,32 +79,25 @@ public class FragmentFAQ extends Fragment{
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_faq, container, false);
+        View view = inflater.inflate(R.layout.fragment_about, container, false);
         ButterKnife.inject(this, view);
-//        faqWebView.setText(getContent());
+//        aboutTextView.setText(Html.fromHtml(getString(R.string.about_content)));
+        String core = "<html><body style='text-align:justify;color:rgba(%s);font-size:%dpx;'>%s</body></html>";
+//        aboutWebView.loadData(getString(R.string.about_content_html), "text/html", "utf-8");
+        aboutWebView.setWebChromeClient(new WebChromeClient() { });
+        aboutWebView.loadData(String.format(core, "#333", 14, getString(R.string.about_content_html)), "text/html", "utf-8");
+        setAwesomeIcon("\uf092", githubTextView, R.color.colorGithubIcon);
+        setAwesomeIcon("\uf082", facebookTextView, R.color.colorFacebookIcon);
+        setAwesomeIcon("\uf081", twetterTextView, R.color.colorTwetterIcon);
         return view;
     }
 
-    private String getContent() {
-        StringBuilder sb = new StringBuilder();
-        String[] faq = getResources().getStringArray(R.array.faq);
-        String[] faqAnswers = getResources().getStringArray(R.array.faq_answers);
-        for(int i = 0;i<faq.length;i++){
-//            sb.append(i+1+". "+ faq[i]);
-//            sb.append(faqAnswers[i]);
-            /*TextView question = new TextView(getActivity());
-            question.setText(i+1+". "+ faq[i]);
-            question.setTypeface(null, Typeface.BOLD);
-            TextView answer = new TextView(getActivity());
-            answer.setText(Html.fromHtml(faqAnswers[i]));
-            containerLinearLayout.addView(question);
-            containerLinearLayout.addView(answer);*/
-            JustifiedWebView myMsg = new JustifiedWebView(getActivity());
-            myMsg.setVerticalScrollBarEnabled(false);
-            myMsg.setText(i+1+". "+ faq[i] + faqAnswers[i]);
-            containerLinearLayout.addView(myMsg);
-        }
-        L.m(sb.toString());
-        return sb.toString();
+    private void setAwesomeIcon(String unicode, TextView textView, int iconColor) {
+        Typeface fontFamily = Typeface.createFromAsset(getResources().getAssets(), "fonts/fontawesome-webfont.ttf");
+        textView.setTypeface(fontFamily);
+        textView.setText(unicode);
+        textView.setTextColor(getResources().getColor(iconColor));
     }
+
+
 }

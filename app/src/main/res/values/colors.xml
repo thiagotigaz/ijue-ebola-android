@@ -10,4 +10,7 @@
     <color name="colorSecondaryText">#727272</color>
     <color name="colorDivider">#B6B6B6</color>
     <color name="colorLight">#F7F7F7</color>
+    <color name="colorGithubIcon">#333333</color>
+    <color name="colorFacebookIcon">#3b5998</color>
+    <color name="colorTwetterIcon">#00aced</color>
 </resources>

@@ -7,15 +7,55 @@
 
     <ScrollView
         android:id="@+id/scrollView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-        <LinearLayout
-            android:id="@+id/faq_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.bluejamesbond.text.DocumentView xmlns:ext="http://schemas.android.com/apk/res-auto"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:padding="@dimen/faq_container_padding"
-            android:orientation="vertical"></LinearLayout>
+            ext:documentView_antialias="true"
+            ext:documentView_cacheConfig="auto_quality"
+            ext:documentView_hyphen="-"
+            ext:documentView_lineHeightMultiplier="2.0"
+            ext:documentView_maxLines="100"
+            ext:documentView_offsetX="10dp"
+            ext:documentView_offsetY="10dp"
+            ext:documentView_insetPadding="10dp"
+            ext:documentView_insetPaddingBottom="10dp"
+            ext:documentView_insetPaddingLeft="10dp"
+            ext:documentView_insetPaddingRight="10dp"
+            ext:documentView_insetPaddingTop="10dp"
+            ext:documentView_progressBar="@id/progressBarXml"
+            ext:documentView_reverse="false"
+            ext:documentView_text="@string/con"
+            ext:documentView_textAlignment="justified"
+            ext:documentView_textColor="@android:color/white"
+            ext:documentView_textFormat="plain"
+            ext:documentView_textSize="12sp"
+            ext:documentView_textStyle="bold|strikeThru|underline"
+            ext:documentView_textSubPixel="true"
+            ext:documentView_textTypefacePath="fonts/helvetica.ttf"
+            ext:documentView_wordSpacingMultiplier="5.0" />
+        <!--<LinearLayout-->
+            <!--android:id="@+id/faq_container"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:padding="@dimen/faq_container_padding"-->
+            <!--android:orientation="vertical">-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/textView"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center_horizontal|top"-->
+                <!--android:gravity="center"-->
+                <!--android:text="@string/faq_header"-->
+                <!--android:textAppearance="?android:attr/textAppearanceLarge" />-->
+            <!--<app.ijueebola.supercloud.com.br.ijueebola.widget.JustifiedWebView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:id="@+id/faqWebView"-->
+                <!--android:layout_gravity="center_horizontal" />-->
+        <!--</LinearLayout>-->
     </ScrollView>
 
 

@@ -14,20 +14,20 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import app.ijueebola.supercloud.com.br.ijueebola.R;
+import app.ijueebola.supercloud.com.br.ijueebola.fragment.FragmentAbout;
 import app.ijueebola.supercloud.com.br.ijueebola.fragment.FragmentDrawer;
 import app.ijueebola.supercloud.com.br.ijueebola.fragment.FragmentFAQ;
+import app.ijueebola.supercloud.com.br.ijueebola.fragment.FragmentTips;
 import it.neokree.materialtabs.MaterialTab;
 import it.neokree.materialtabs.MaterialTabHost;
 import it.neokree.materialtabs.MaterialTabListener;
 
 
-public class ActivityMain extends ActionBarActivity implements MaterialTabListener {
+public class MainActivity extends ActionBarActivity implements MaterialTabListener {
 
     //int representing our 0th tab corresponding to the Fragment where search results are dispalyed
     public static final int TAB_FAQ = 0;
-    //int corresponding to our 1st tab corresponding to the Fragment where box office hits are dispalyed
-    public static final int TAB_HITS = 1;
-    //int corresponding to our 2nd tab corresponding to the Fragment where upcoming movies are displayed
+    public static final int TAB_TIPS = 1;
     public static final int TAB_ABOUT = 2;
     //int corresponding to the number of tabs in our Activity
     public static final int TAB_COUNT = 3;
@@ -37,7 +37,6 @@ public class ActivityMain extends ActionBarActivity implements MaterialTabListen
     private MaterialTabHost mTabHost;
     private ViewPager mPager;
     private ViewPagerAdapter mAdapter;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -102,32 +101,9 @@ public class ActivityMain extends ActionBarActivity implements MaterialTabListen
     public void onTabUnselected(MaterialTab materialTab) {
     }
 
-//    @Override
-//    public void onClick(View v) {
-//        //call instantiate item since getItem may return null depending on whether the PagerAdapter is of type FragmentPagerAdapter or FragmentStatePagerAdapter
-//        Fragment fragment = (Fragment) mAdapter.instantiateItem(mPager, mPager.getCurrentItem());
-//        /*if (fragment instanceof SortListener) {
-//
-//            if (v.getTag().equals(TAG_SORT_NAME)) {
-//                //call the sort by name method on any Fragment that implements sortlistener
-//                ((SortListener) fragment).onSortByName();
-//            }
-//            if (v.getTag().equals(TAG_SORT_DATE)) {
-//                //call the sort by date method on any Fragment that implements sortlistener
-//                ((SortListener) fragment).onSortByDate();
-//            }
-//            if (v.getTag().equals(TAG_SORT_RATINGS)) {
-//                //call the sort by ratings method on any Fragment that implements sortlistener
-//                ((SortListener) fragment).onSortByRating();
-//            }
-//        }*/
-//
-//    }
-
     private class ViewPagerAdapter extends FragmentStatePagerAdapter {
 
-        int icons[] = {R.drawable.ic_action_faq,
-                R.drawable.ic_action_trending,
+        int icons[] = {R.drawable.ic_action_faq, R.drawable.ic_action_tips,
                 R.drawable.ic_action_about};
 
         FragmentManager fragmentManager;
@@ -144,11 +120,11 @@ public class ActivityMain extends ActionBarActivity implements MaterialTabListen
                 case TAB_FAQ:
                     fragment = FragmentFAQ.newInstance("", "");
                     break;
-                case TAB_HITS:
-                    fragment = FragmentFAQ.newInstance("", "");
+                case TAB_TIPS:
+                    fragment = FragmentTips.newInstance("", "");
                     break;
                 case TAB_ABOUT:
-                    fragment = FragmentFAQ.newInstance("", "");
+                    fragment = FragmentAbout.newInstance("", "");
                     break;
             }
             return fragment;

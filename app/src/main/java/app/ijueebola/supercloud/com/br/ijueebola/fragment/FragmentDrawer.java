@@ -21,7 +21,7 @@ import java.util.List;
 
 import app.ijueebola.supercloud.com.br.ijueebola.MyApplication;
 import app.ijueebola.supercloud.com.br.ijueebola.R;
-import app.ijueebola.supercloud.com.br.ijueebola.activity.ActivityMain;
+import app.ijueebola.supercloud.com.br.ijueebola.activity.MainActivity;
 import app.ijueebola.supercloud.com.br.ijueebola.adapters.AdapterDrawer;
 import app.ijueebola.supercloud.com.br.ijueebola.pojo.Information;
 
@@ -69,7 +69,7 @@ public class FragmentDrawer extends Fragment {
     public List<Information> getData() {
         //load only static data inside a drawer
         List<Information> data = new ArrayList<>();
-        int[] icons = {R.drawable.ic_action_faq_red, R.drawable.ic_action_trending_orange, R.drawable.ic_action_about_red};
+        int[] icons = {R.drawable.ic_action_faq_red, R.drawable.ic_action_tips_red, R.drawable.ic_action_about_red};
         String[] titles = getResources().getStringArray(R.array.drawer_tabs);
         for (int i = 0; i < titles.length; i++) {
             Information information = new Information();
@@ -101,7 +101,7 @@ public class FragmentDrawer extends Fragment {
             @Override
             public void onClick(View view, int position) {
                 mDrawerLayout.closeDrawer(GravityCompat.START);
-                ((ActivityMain) getActivity()).onDrawerItemClicked(position-1);
+                ((MainActivity) getActivity()).onDrawerItemClicked(position-1);
             }
 
             @Override
@@ -196,6 +196,5 @@ public class FragmentDrawer extends Fragment {
         public void onTouchEvent(RecyclerView rv, MotionEvent e) {
         }
     }
-
 
 }

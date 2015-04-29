@@ -1,26 +1,24 @@
 package app.ijueebola.supercloud.com.br.ijueebola.fragment;
 
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import app.ijueebola.supercloud.com.br.ijueebola.R;
-import app.ijueebola.supercloud.com.br.ijueebola.logging.L;
-import app.ijueebola.supercloud.com.br.ijueebola.widget.JustifiedWebView;
-import butterknife.ButterKnife;
-import butterknife.InjectView;
 
 
 /**
  * A simple {@link android.support.v4.app.Fragment} subclass.
- * Use the {@link FragmentFAQ#newInstance} factory method to
+ * Use the {@link app.ijueebola.supercloud.com.br.ijueebola.fragment.FragmentTips#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class FragmentFAQ extends Fragment{
+public class FragmentTips extends Fragment{
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -29,12 +27,10 @@ public class FragmentFAQ extends Fragment{
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    @InjectView(R.id.faq_container)
     LinearLayout containerLinearLayout;
-//    @InjectView(R.id.faqWebView)
-//    JustifiedWebView faqWebView;
 
-    public FragmentFAQ() {
+
+    public FragmentTips() {
         // Required empty public constructor
     }
 
@@ -47,8 +43,8 @@ public class FragmentFAQ extends Fragment{
      * @return A new instance of fragment FragmentSearch.
      */
     // TODO: Rename and change types and number of parameters
-    public static FragmentFAQ newInstance(String param1, String param2) {
-        FragmentFAQ fragment = new FragmentFAQ();
+    public static FragmentTips newInstance(String param1, String param2) {
+        FragmentTips fragment = new FragmentTips();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -69,32 +65,23 @@ public class FragmentFAQ extends Fragment{
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_faq, container, false);
-        ButterKnife.inject(this, view);
-//        faqWebView.setText(getContent());
+        View view = inflater.inflate(R.layout.fragment_tips, container, false);
+        containerLinearLayout = (LinearLayout) view.findViewById(R.id.tips_container);
+        setupTips(containerLinearLayout);
         return view;
     }
 
-    private String getContent() {
-        StringBuilder sb = new StringBuilder();
-        String[] faq = getResources().getStringArray(R.array.faq);
-        String[] faqAnswers = getResources().getStringArray(R.array.faq_answers);
+    private void setupTips(LinearLayout containerLinearLayout) {
+        String[] faq = getResources().getStringArray(R.array.tips);
+        String[] faqAnswers = getResources().getStringArray(R.array.tip_answers);
         for(int i = 0;i<faq.length;i++){
-//            sb.append(i+1+". "+ faq[i]);
-//            sb.append(faqAnswers[i]);
-            /*TextView question = new TextView(getActivity());
+            TextView question = new TextView(getActivity());
             question.setText(i+1+". "+ faq[i]);
             question.setTypeface(null, Typeface.BOLD);
             TextView answer = new TextView(getActivity());
-            answer.setText(Html.fromHtml(faqAnswers[i]));
+            answer.setText(faqAnswers[i]+"\n");
             containerLinearLayout.addView(question);
-            containerLinearLayout.addView(answer);*/
-            JustifiedWebView myMsg = new JustifiedWebView(getActivity());
-            myMsg.setVerticalScrollBarEnabled(false);
-            myMsg.setText(i+1+". "+ faq[i] + faqAnswers[i]);
-            containerLinearLayout.addView(myMsg);
+            containerLinearLayout.addView(answer);
         }
-        L.m(sb.toString());
-        return sb.toString();
     }
 }

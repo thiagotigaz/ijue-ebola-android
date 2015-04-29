@@ -22,7 +22,7 @@
     </string-array>
 
     <string-array name="faq">
-        <item>What is Ebola virus disease?</item>
+        <item><![CDATA[<b>What is the Ebola virus disease?</b>]]></item>
         <item>How do people become infected with the virus?</item>
         <item>Who is most at risk?</item>
         <item>What are typical signs and symptoms of infection?</item>
@@ -35,40 +35,72 @@
         <item>Is it safe to travel with persons who have Ebola?</item>
     </string-array>
 
-    <string-array name="faq_answer">
-        <item>Ebola virus disease (formerly known as Ebola haemorrhagic fever) is a severe, often fatal illness, with a death rate of up to 90%. The illness affects humans and nonhuman primates (monkeys, gorillas, and chimpanzees). Ebola first appeared in 1976 in two simultaneous outbreaks, one in a village near the Ebola River in the Democratic Republic of Congo, and the other in a remote area of Sudan. The origin of the virus is unknown but fruit bats (Pteropodidae) are considered the likely host of the Ebola virus, based on available evidence.</item>
-        <item>Infection occurs from direct contact through broken skin or mucous membranes with the blood, or other bodily fluids or secretions (stool, urine, saliva, semen) of infected people. Infection can also occur if broken skin or mucous membranes of a healthy person come into contact with environments that have become contaminated with an Ebola patient’s infectious fluids such as soiled clothing, bed linen, or used needles.</item>
-        <item>During an outbreak, those at higher risk of infection are:
+    <string-array name="faq_answers">
+        <item><![CDATA[Ebola virus disease (formerly known as Ebola haemorrhagic fever) is a severe, often fatal illness, with a death rate of up to 90%. The illness affects humans and nonhuman primates (monkeys, gorillas, and chimpanzees).
+            Ebola first appeared in 1976 in two simultaneous outbreaks, one in a village near the Ebola River in the Democratic Republic of Congo, and the other in a remote area of Sudan.
+            The origin of the virus is unknown, but fruit bats (Pteropodidae) are considered the likely host of the Ebola virus, based on available evidence.<br/>]]></item>
+        <item><![CDATA[Infection occurs from direct contact through broken skin or mucous membranes with the blood, or other bodily fluids or secretions (stool, urine, saliva, semen) of infected people. Infection can also occur if broken skin or mucous membranes of a healthy person come into contact with environments that have become contaminated with an Ebola patient’s infectious fluids such as soiled clothing, bed linen, or used needles.<br/>]]></item>
+        <item><![CDATA[During an outbreak, those at higher risk of infection are:
               health workers;
               family members or others in close contact with infected people;
-              Mourners who have direct contact with the bodies of the deceased as part of burial ceremonies.
-              Exposure to the virus can be controlled through the use of protective measures in clinics and hospitals, at community gatherings, or at home.</item>
-        <item>Sudden onset of fever,
-            intense weakness,
-            Muscle pain.
-            headache
-            Sore throat is typical signs and symptoms.
-            This is followed by vomiting, diarrhea, rash, impaired kidney and liver function, and in some cases, both internal and external bleeding. The incubation period, or the time interval from infection to onset of symptoms, is from 2 to 21 days. The patients become contagious once they begin to show symptoms. Ebola virus disease infections can only be confirmed through laboratory testing.
+              Mourners who have direct contact with the bodies of the deceased as part of burial ceremonies;
+              Exposure to the virus can be controlled through the use of protective measures in clinics and hospitals, at community gatherings, or at home.<br/>]]></item>
+        <item><![CDATA[
+                \t•Sudden onset of fever;<br/>
+                \t•Intense weakness;<br/>
+                \t•Muscle pain;<br/>
+                \t•Headache;<br/>
+                \t•Sore throat;<br/>
+                \t•Any of the above combined;<br/>
+            This is followed by vomiting, diarrhea, rash, impaired kidney and liver function, and in some cases, both internal and external bleeding.
+            The incubation period, or the time interval from infection to onset of symptoms, is from 2 to 21 days. The patients become contagious once they begin to show symptoms. Ebola virus disease infections can only be confirmed through laboratory testing.<br/>]]>
         </item>
-        <item>If you must travel to an area affected by the 2014 Ebola outbreak:
-                Wash your hands frequently or use an alcohol-based hand sanitizer.
-                Avoid contact with the blood and body fluids of any person, particularly someone who is sick.
-                Do not handle items that may have come in contact with an infected person’s blood or body fluids.
-                Do not touch the body of someone who has died from Ebola.
-                Do not touch bats and nonhuman primates (apes and monkeys) or their blood and fluids and do not touch or eat raw meat prepared from these animals.
+        <item><![CDATA[If you must travel to an area affected by the 2014 Ebola outbreak:<br/>
+                \t•Wash your hands frequently or use an alcohol-based hand sanitizer;<br/>
+                \t•Avoid contact with the blood and body fluids of any person, particularly someone who is sick;<br/>
+                \t•Do not handle items that may have come in contact with an infected person’s blood or body fluids;<br/>
+                \t•Do not touch the body of someone who has died from Ebola;<br/>
+                \t•Do not touch bats and nonhuman primates (apes and monkeys) or their blood and fluids and do not touch or eat raw meat prepared from these animals;<br/>]]>
         </item>
-        <item>Severely ill patients require intensive supportive care. They are frequently dehydrated and need intravenous fluids or oral rehydration with solutions that contain electrolytes. There is currently no specific treatment to cure the disease. To help control further spread of the virus, people that are suspected or confirmed to have the disease should be isolated from other patients and treated by health workers using strict infection control precautions.</item>
-        <item>Currently, there is no licensed medicine or vaccine for Ebola virus disease.</item>
-        <item>Hand hygiene is essential and should be performed:
-            before donning gloves and wearing PPE on entry to the isolation room/area;
-            before any clean or aseptic procedures is being performed on a patient;
-            after any exposure risk or actual exposure with a patient’s blood or body fluids;
-            after touching (even potentially) contaminated surfaces, items, or equipment in the patient’s surroundings; and
-            After removal of PPE, upon leaving the isolation area.
+        <item><![CDATA[Severely ill patients require intensive supportive care. They are frequently dehydrated and need intravenous fluids or oral rehydration with solutions that contain electrolytes (sodium carbonate). There is currently no specific treatment to cure the disease.
+            To help control further spread of the virus, people that are suspected or confirmed to have the disease should be isolated from other patients and treated by health workers using strict infection control precautions.<br/>]]></item>
+        <item><![CDATA[Currently, there is no licensed medicine or vaccine for Ebola virus disease, but several products are shown to improve recovery. Consult a licensed medical professional regarding this question.<br/>]]></item>
+        <item><![CDATA[Hand hygiene is essential and should be performed:<br/>
+            \t•before donning gloves and wearing PPE on entry to the isolation room/area;<br/>
+            \t•before any clean or aseptic procedures is being performed on a patient;<br/>
+            \t•after any exposure risk or actual exposure with a patient’s blood or body fluids;<br/>
+            \t•after touching (even potentially) contaminated surfaces, items, or equipment in the patient’s surroundings;<br/>
+            \t•After removal of PPE, upon leaving the isolation area;<br/>]]>
         </item>
-        <item>While there is no specific drug against Ebola, the best treatment is intensive supportive treatment provided in the hospital by health workers using strict infection control procedures. The infection can be controlled through recommended protective measures.</item>
-        <item>While travelers should always be vigilant with regard to their health and those around them, the risk of infection for travelers is very low since person-to-person transmission results from direct contact with the body fluids or secretions of an infected patient.</item>
-        <item>As with any illness or disease, it is always possible that a person who has been exposed to Ebola virus may choose to travel. If the individual has not developed symptoms they cannot transmit Ebola virus disease to those around them. If the individual does have symptoms, they should seek immediate medical attention at the first sign they are feeling unwell.</item>
+        <item><![CDATA[While there is no specific drug against Ebola, the best treatment is intensive supportive treatment provided in the hospital by health workers using strict infection control procedures. The infection can be controlled through recommended protective measures.<br/>]]></item>
+        <item><![CDATA[While travelers should always be vigilant with regard to their health and those around them, the risk of infection for travelers is very low since person-to-person transmission results from direct contact with the body fluids or secretions of an infected patient.<br/>]]></item>
+        <item><![CDATA[As with any illness or disease, it is always possible that a person who has been exposed to Ebola virus may choose to travel. If the individual has not developed symptoms they cannot transmit Ebola virus disease to those around them. If the individual does have symptoms, they should seek immediate medical attention at the first sign they are feeling unwell.<br/>]]></item>
+    </string-array>
+
+    <string-array name="tips">
+        <item>Do you live where many people have died from Ebola?</item>
+        <item>Do you know someone who has been sick for many days?</item>
+        <item>Do you have fever? (higher than normal body temperature) Do you feel hotter than normal?</item>
+        <item>Do you live with someone who has been sick in the last 3 weeks?</item>
+        <item>Have you have you taken care of someone who is sick?</item>
+        <item>Have you touched a dead body in the last 3 weeks?</item>
+        <item>Have you been involved in preparing a body for burial?</item>
+        <item>Have you been exposed to blood, vomit, feces, spit?</item>
+        <item>Have you vomited, had diarrhea or unusual bruising or bleeding in the last 3 weeks?</item>
+        <item>Have you had a severe headache, body pain, fatigue, or stomach pains in the last 3 weeks?</item>
+    </string-array>
+
+    <string-array name="tip_answers">
+        <item>Wash hands with clean water many times a day - Greet others with a hand over your heart.</item>
+        <item>Greet others with a hand over your heart - avoid shaking hands.  Wash hands daily.</item>
+        <item>Drink ORS - do not use public transportation.</item>
+        <item>Do Not Share Utensils with others - disinfect surfaces with diluted chlorine.</item>
+        <item>Disinfect areas with diluted chlorine - Use gloves and aprons - Wash hands often.</item>
+        <item>Avoid touching or hugging dead bodies - Disinfect surfaces with diluted chlorine.</item>
+        <item>Use gloves and aprons when preparing a funeral - avoid preparing bodies for funeral.</item>
+        <item>Wash hands and surfaces with diluted chlorine - avoid touching body fluids of others.</item>
+        <item>Disinfect surfaces with chlorine - avoid shaking hands.</item>
+        <item>If you feel sick, do not get in the bus or taxi.</item>
     </string-array>
 
     <string name="title_activity_activity_using_tab_library">SlidingTabLayoutActivity</string>
@@ -94,5 +126,20 @@
     <string name="title_activity_activity_shared">Shared A</string>
     <string name="title_activity_activity_shared_b">Shared B</string>
     <string name="action_shared_transitions">SharedElementsTransition</string>
+
+    <string name="title_activity_splash">SplashActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="tips_header">TEN TIPS YOU SHOULD KNOW</string>
+    <string name="about_header">ABOUT</string>
+    <string name="about_content"><![CDATA[<b>Ijue Ebola</b> is the free android Application launched by African Youth working in providing education about the serious disease of Ebola for all people around the world.<br/><br/>
+        This project was developed in a volunteer manner as an open source project where every developer who wants to volunteer can join and help coding.<br/>
+        Our source code is available on github. Feel free to join us!
+    ]]></string>
+    <string name="faq_header">FREQUENTLY ASKED QUESTIONS</string>
+    <string name="about_content_html"><![CDATA[<b>Ijue Ebola</b> is the free android Application launched by African Youth working in providing education about the serious disease of Ebola for all people around the world.<br/><br/>
+        This project was developed in a volunteer manner as an open source project where every developer who wants to volunteer can join and help coding.<br/>
+        Our source code is available on github. Feel free to join us!
+    ]]></string>
 
 </resources>
