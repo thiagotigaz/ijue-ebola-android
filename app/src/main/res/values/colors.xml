@@ -13,4 +13,5 @@
     <color name="colorGithubIcon">#333333</color>
     <color name="colorFacebookIcon">#3b5998</color>
     <color name="colorTwetterIcon">#00aced</color>
+    <color name="colorContentText">#333</color>
 </resources>

@@ -22,7 +22,7 @@
     </string-array>
 
     <string-array name="faq">
-        <item><![CDATA[<b>What is the Ebola virus disease?</b>]]></item>
+        <item>What is the Ebola virus disease?</item>
         <item>How do people become infected with the virus?</item>
         <item>Who is most at risk?</item>
         <item>What are typical signs and symptoms of infection?</item>
@@ -70,8 +70,7 @@
             \t•before any clean or aseptic procedures is being performed on a patient;<br/>
             \t•after any exposure risk or actual exposure with a patient’s blood or body fluids;<br/>
             \t•after touching (even potentially) contaminated surfaces, items, or equipment in the patient’s surroundings;<br/>
-            \t•After removal of PPE, upon leaving the isolation area;<br/>]]>
-        </item>
+            \t•After removal of PPE, upon leaving the isolation area;<br/>]]></item>
         <item><![CDATA[While there is no specific drug against Ebola, the best treatment is intensive supportive treatment provided in the hospital by health workers using strict infection control procedures. The infection can be controlled through recommended protective measures.<br/>]]></item>
         <item><![CDATA[While travelers should always be vigilant with regard to their health and those around them, the risk of infection for travelers is very low since person-to-person transmission results from direct contact with the body fluids or secretions of an infected patient.<br/>]]></item>
         <item><![CDATA[As with any illness or disease, it is always possible that a person who has been exposed to Ebola virus may choose to travel. If the individual has not developed symptoms they cannot transmit Ebola virus disease to those around them. If the individual does have symptoms, they should seek immediate medical attention at the first sign they are feeling unwell.<br/>]]></item>
@@ -128,18 +127,15 @@
     <string name="action_shared_transitions">SharedElementsTransition</string>
 
     <string name="title_activity_splash">SplashActivity</string>
-    <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="tips_header">TEN TIPS YOU SHOULD KNOW</string>
     <string name="about_header">ABOUT</string>
-    <string name="about_content"><![CDATA[<b>Ijue Ebola</b> is the free android Application launched by African Youth working in providing education about the serious disease of Ebola for all people around the world.<br/><br/>
-        This project was developed in a volunteer manner as an open source project where every developer who wants to volunteer can join and help coding.<br/>
-        Our source code is available on github. Feel free to join us!
-    ]]></string>
     <string name="faq_header">FREQUENTLY ASKED QUESTIONS</string>
-    <string name="about_content_html"><![CDATA[<b>Ijue Ebola</b> is the free android Application launched by African Youth working in providing education about the serious disease of Ebola for all people around the world.<br/><br/>
-        This project was developed in a volunteer manner as an open source project where every developer who wants to volunteer can join and help coding.<br/>
-        Our source code is available on github. Feel free to join us!
-    ]]></string>
+    <string name="about_content"><![CDATA[<b>
+        The app</b><br/><br/>
+        <b>Ijue Ebola</b> came to be as a volunteer effort of Thiago Lima, Tuomas Santakallio, Sudi Mohamed and Mustapha Cole. We had discovered that there is a genuine need for a mobile handbook of generic symptoms and first aid in the epidemic areas. A handbook with reliable data in the hands of the public could save lives. It would teach the user quickly in how to react, and what to do in case of emergency. The app contains instructions obtained from the WHO.<br/>
+        <br/><b>The program</b><br/><br/>
+        Ijue Ebola is to be introduced in schools, hospitals, and places of gathering in the epidemic areas. In Sierra Leone, the Sierra Leone Liberty Group will introduce the app to the ministry of education. The public service then chooses the proper steps to make teachers in the hot zones aware of the app. In cases, where the teacher does not have a smartphone, money will be raised to buy them one.
+        When the public is educated through repetition in their own language through someone they can trust with reliable set of information, there is a remarkable rise in awareness even with a basic set of instructions. This will save people.
+]]></string>
 
 </resources>

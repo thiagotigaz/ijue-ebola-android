@@ -1,20 +1,27 @@
 package app.ijueebola.supercloud.com.br.ijueebola.fragment;
 
 
+import android.content.Intent;
 import android.graphics.Typeface;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebChromeClient;
-import android.webkit.WebView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.bluejamesbond.text.DocumentView;
+import com.bluejamesbond.text.style.TextAlignment;
 
 import app.ijueebola.supercloud.com.br.ijueebola.R;
+import app.ijueebola.supercloud.com.br.ijueebola.helper.ArticleBuilder;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
+import butterknife.OnClick;
 
 
 /**
@@ -31,18 +38,15 @@ public class FragmentAbout extends Fragment{
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    private LinearLayout containerLinearLayout;
+    @InjectView(R.id.about_content_container)
+    LinearLayout aboutContainerLinearLayout;
 
-//    @InjectView(R.id.aboutTextView)
-//    TextView aboutTextView;
     @InjectView(R.id.textViewGithub)
     TextView githubTextView;
     @InjectView(R.id.textViewFacebook)
     TextView facebookTextView;
     @InjectView(R.id.textViewTwitter)
     TextView twetterTextView;
-    @InjectView(R.id.aboutWebView)
-    WebView aboutWebView;
 
     public FragmentAbout() {
         // Required empty public constructor
@@ -81,15 +85,18 @@ public class FragmentAbout extends Fragment{
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_about, container, false);
         ButterKnife.inject(this, view);
-//        aboutTextView.setText(Html.fromHtml(getString(R.string.about_content)));
-        String core = "<html><body style='text-align:justify;color:rgba(%s);font-size:%dpx;'>%s</body></html>";
-//        aboutWebView.loadData(getString(R.string.about_content_html), "text/html", "utf-8");
-        aboutWebView.setWebChromeClient(new WebChromeClient() { });
-        aboutWebView.loadData(String.format(core, "#333", 14, getString(R.string.about_content_html)), "text/html", "utf-8");
+        addDocumentView(getContent(),DocumentView.FORMATTED_TEXT);
+
         setAwesomeIcon("\uf092", githubTextView, R.color.colorGithubIcon);
         setAwesomeIcon("\uf082", facebookTextView, R.color.colorFacebookIcon);
         setAwesomeIcon("\uf081", twetterTextView, R.color.colorTwetterIcon);
         return view;
+    }
+
+    private ArticleBuilder getContent() {
+        ArticleBuilder ab = new ArticleBuilder();
+        ab.append(getString(R.string.about_content),false);
+        return ab;
     }
 
     private void setAwesomeIcon(String unicode, TextView textView, int iconColor) {
@@ -99,5 +106,53 @@ public class FragmentAbout extends Fragment{
         textView.setTextColor(getResources().getColor(iconColor));
     }
 
+    public DocumentView addDocumentView(CharSequence article, int type, boolean rtl) {
+        final DocumentView documentView = new DocumentView(getActivity(), type);
+        documentView.getDocumentLayoutParams().setTextColor(getResources().getColor(R.color.colorContentText));
+        documentView.getDocumentLayoutParams().setTextTypeface(Typeface.DEFAULT);
+        documentView.getDocumentLayoutParams().setTextSize(TypedValue.COMPLEX_UNIT_SP, 16);
+        documentView.getDocumentLayoutParams().setTextAlignment(TextAlignment.JUSTIFIED);
+        documentView.getDocumentLayoutParams().setLineHeightMultiplier(1f);
+        documentView.getDocumentLayoutParams().setInsetPaddingLeft(30f);
+        documentView.getDocumentLayoutParams().setInsetPaddingRight(30f);
+        documentView.getDocumentLayoutParams().setInsetPaddingTop(30f);
+        documentView.getDocumentLayoutParams().setInsetPaddingBottom(30f);
+        documentView.getDocumentLayoutParams().setLineHeightMultiplier(3f);
+        documentView.getDocumentLayoutParams().setReverse(rtl);
+        documentView.setText(article);
+        documentView.setFadeInDuration(500);
+        documentView.setFadeInAnimationStepDelay(30);
+        documentView.setFadeInTween(new DocumentView.ITween() {
+            @Override
+            public float get(float t, float b, float c, float d) {
+                return c * (t /= d) * t * t + b;
+            }
+        });
+
+        aboutContainerLinearLayout.addView(documentView);
+        return documentView;
+    }
+
+    public DocumentView addDocumentView(CharSequence article, int type) {
+        return addDocumentView(article, type, false);
+    }
+
+    @OnClick(R.id.textViewGithub)
+    public void githubClick(){
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/thiagotigaz/ijue-ebola-android"));
+        startActivity(browserIntent);
+    }
+
+    @OnClick(R.id.textViewFacebook)
+    public void facebookClick(){
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/pages/Ijue-Ebola/1456614604602668"));
+        startActivity(browserIntent);
+    }
+
+    @OnClick(R.id.textViewTwitter)
+    public void twitterClick(){
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://twitter.com/ijueebola"));
+        startActivity(browserIntent);
+    }
 
 }
