@@ -6,13 +6,13 @@ import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.text.Html;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bluejamesbond.text.DocumentView;
 import com.bluejamesbond.text.style.TextAlignment;
@@ -39,7 +39,7 @@ public class FragmentAbout extends Fragment{
     private String mParam1;
     private String mParam2;
     @InjectView(R.id.about_content_container)
-    LinearLayout aboutContainerLinearLayout;
+    LinearLayout containerLinearLayout;
 
     @InjectView(R.id.textViewGithub)
     TextView githubTextView;
@@ -85,8 +85,12 @@ public class FragmentAbout extends Fragment{
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_about, container, false);
         ButterKnife.inject(this, view);
-        addDocumentView(getContent(),DocumentView.FORMATTED_TEXT);
-
+//        addDocumentView(getContent(),DocumentView.FORMATTED_TEXT);
+        TextView textView = new TextView(getActivity());
+        textView.setText(Html.fromHtml(getString(R.string.about_content)));
+        textView.setTextColor(getResources().getColor(R.color.colorContentText));
+        textView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 20f);
+        containerLinearLayout.addView(textView);
         setAwesomeIcon("\uf092", githubTextView, R.color.colorGithubIcon);
         setAwesomeIcon("\uf082", facebookTextView, R.color.colorFacebookIcon);
         setAwesomeIcon("\uf081", twetterTextView, R.color.colorTwetterIcon);
@@ -95,7 +99,7 @@ public class FragmentAbout extends Fragment{
 
     private ArticleBuilder getContent() {
         ArticleBuilder ab = new ArticleBuilder();
-        ab.append(getString(R.string.about_content),false);
+        ab.append(getString(R.string.about_content), false);
         return ab;
     }
 
@@ -129,7 +133,7 @@ public class FragmentAbout extends Fragment{
             }
         });
 
-        aboutContainerLinearLayout.addView(documentView);
+        containerLinearLayout.addView(documentView);
         return documentView;
     }
 

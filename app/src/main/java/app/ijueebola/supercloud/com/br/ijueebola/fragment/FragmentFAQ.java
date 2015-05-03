@@ -4,12 +4,14 @@ package app.ijueebola.supercloud.com.br.ijueebola.fragment;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.text.Html;
 import android.text.style.StyleSpan;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.bluejamesbond.text.DocumentView;
 import com.bluejamesbond.text.style.TextAlignment;
@@ -74,7 +76,16 @@ public class FragmentFAQ extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_faq, container, false);
         ButterKnife.inject(this, view);
-        addDocumentView(getContent(), DocumentView.PLAIN_TEXT);
+        //addDocumentView(getContent(), DocumentView.PLAIN_TEXT);
+//        DocumentView documentView = new DocumentView(getActivity(),DocumentView.FORMATTED_TEXT);
+//        documentView.setText(getContentString());
+//        documentView.getDocumentLayoutParams().setTextAlignment(TextAlignment.JUSTIFIED);
+//        documentView.getDocumentLayoutParams().setAntialias(false);
+        TextView textView = new TextView(getActivity());
+        textView.setText(Html.fromHtml(getContentString()));
+        textView.setTextColor(getResources().getColor(R.color.colorContentText));
+        textView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 20f);
+        containerLinearLayout.addView(textView);
         return view;
     }
 
@@ -87,6 +98,17 @@ public class FragmentFAQ extends Fragment {
             ab.append(faqAnswers[i], false);
         }
         return ab;
+    }
+
+    private String getContentString() {
+        String[] faq = getResources().getStringArray(R.array.faq);
+        String[] faqAnswers = getResources().getStringArray(R.array.faq_answers);
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < faq.length; i++) {
+            sb.append( i + 1 + ". " + faq[i]+"<br/><br/>");
+            sb.append(faqAnswers[i]+"<br/>");
+        }
+        return sb.toString();
     }
 
     public DocumentView addDocumentView(CharSequence article, int type, boolean rtl) {

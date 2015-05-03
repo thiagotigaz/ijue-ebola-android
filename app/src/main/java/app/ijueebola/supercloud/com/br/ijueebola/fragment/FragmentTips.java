@@ -4,11 +4,13 @@ package app.ijueebola.supercloud.com.br.ijueebola.fragment;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.text.Html;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.bluejamesbond.text.DocumentView;
 import com.bluejamesbond.text.style.TextAlignment;
@@ -74,7 +76,16 @@ public class FragmentTips extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_tips, container, false);
         ButterKnife.inject(this, view);
-        addDocumentView(getContent(), DocumentView.PLAIN_TEXT);
+//        addDocumentView(getContent(), DocumentView.PLAIN_TEXT);
+//        DocumentView documentView = new DocumentView(getActivity(),DocumentView.FORMATTED_TEXT);
+//        documentView.setText(getContentString());
+//        documentView.getDocumentLayoutParams().setTextAlignment(TextAlignment.JUSTIFIED);
+//        documentView.getDocumentLayoutParams().setAntialias(true);
+        TextView textView = new TextView(getActivity());
+        textView.setText(Html.fromHtml(getContentString()));
+        textView.setTextColor(getResources().getColor(R.color.colorContentText));
+        textView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 20f);
+        containerLinearLayout.addView(textView);
         return view;
     }
 
@@ -87,6 +98,17 @@ public class FragmentTips extends Fragment {
             ab.append(tipAnswers[i], true);
         }
         return ab;
+    }
+
+    private String getContentString() {
+        String[] tips = getResources().getStringArray(R.array.tips);
+        String[] tipAnswers = getResources().getStringArray(R.array.tip_answers);
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < tips.length; i++) {
+            sb.append( i + 1 + ". " + tips[i]+"<br/><br/>");
+            sb.append(tipAnswers[i]+"<br/><br/>");
+        }
+        return sb.toString();
     }
 
     public DocumentView addDocumentView(CharSequence article, int type, boolean rtl) {

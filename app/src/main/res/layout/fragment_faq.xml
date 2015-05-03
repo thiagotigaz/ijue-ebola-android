@@ -4,21 +4,29 @@
     android:layout_height="match_parent"
     tools:context="app.ijueebola.supercloud.com.br.ijueebola.fragment.FragmentFAQ">
 
-    <LinearLayout
-        android:id="@+id/content_container"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:orientation="vertical"
-        android:padding="@dimen/faq_container_padding">
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal|top"
-            android:gravity="center"
-            android:text="@string/faq_header"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:paddingBottom="5dp"/>
-    </LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/content_container"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/faq_container_padding">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|top"
+                android:gravity="center"
+                android:paddingBottom="5dp"
+                android:text="@string/faq_header"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+        </LinearLayout>
+
+
+    </ScrollView>
 
 </FrameLayout>

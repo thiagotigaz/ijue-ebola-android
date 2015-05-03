@@ -4,28 +4,28 @@
     android:layout_height="match_parent"
     tools:context="app.ijueebola.supercloud.com.br.ijueebola.fragment.FragmentAbout">
 
-
-    <LinearLayout
-        android:id="@+id/content_container"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="@dimen/faq_container_padding">
+        android:layout_height="match_parent">
 
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal|top"
-            android:gravity="center"
-            android:paddingBottom="5dp"
-            android:text="@string/about_header"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
-
-        <ScrollView
+        <LinearLayout
+            android:id="@+id/content_container"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/faq_container_padding">
+
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|top"
+                android:gravity="center"
+                android:paddingBottom="5dp"
+                android:text="@string/about_header"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -36,7 +36,34 @@
                     android:id="@+id/about_content_container"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"></LinearLayout>
+                    android:orientation="vertical">
+
+                    <!--<com.bluejamesbond.text.DocumentView xmlns:ext="http://schemas.android.com/apk/res-auto"-->
+                    <!--android:layout_width="fill_parent"-->
+                    <!--android:layout_height="fill_parent"-->
+                    <!--ext:documentView_antialias="true"-->
+                    <!--ext:documentView_cacheConfig="no_cache"-->
+                    <!--ext:documentView_hyphen="-"-->
+                    <!--ext:documentView_insetPadding="10dp"-->
+                    <!--ext:documentView_insetPaddingBottom="10dp"-->
+                    <!--ext:documentView_insetPaddingLeft="10dp"-->
+                    <!--ext:documentView_insetPaddingRight="10dp"-->
+                    <!--ext:documentView_insetPaddingTop="10dp"-->
+                    <!--ext:documentView_lineHeightMultiplier="2.0"-->
+                    <!--ext:documentView_maxLines="100"-->
+                    <!--ext:documentView_offsetX="10dp"-->
+                    <!--ext:documentView_offsetY="10dp"-->
+                    <!--ext:documentView_reverse="false"-->
+                    <!--ext:documentView_text="@string/about_content"-->
+                    <!--ext:documentView_textAlignment="justified"-->
+                    <!--ext:documentView_textColor="@color/colorContentText"-->
+                    <!--ext:documentView_textFormat="plain"-->
+                    <!--ext:documentView_textSize="12sp"-->
+                    <!--ext:documentView_textStyle="bold"-->
+                    <!--ext:documentView_textSubPixel="true"/>-->
+                    <!--ext:documentView_textTypefacePath="fonts/helvetica.ttf"-->
+
+                </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="fill_parent"
@@ -76,8 +103,8 @@
                 </LinearLayout>
 
             </LinearLayout>
-        </ScrollView>
-    </LinearLayout>
 
+        </LinearLayout>
 
+    </ScrollView>
 </FrameLayout>
